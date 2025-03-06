@@ -8,7 +8,7 @@ Para usar a biblioteca no seu código você pode usar:
 import pandas as pd # para usar o pandas pela abreviação "pd"
 ```
 
-Agora já estamos prontos para ver um exemplo do uso do Pandas na manipulação de um arquivo **csv***, muito comum no contexto de ciência de dados. 
+Agora já estamos prontos para ver um exemplo do uso do Pandas na manipulação de um arquivo **csv**, muito comum no contexto de ciência de dados. 
 
 ```python
 file_path = '/caminho/arquivo.csv'
@@ -37,7 +37,7 @@ Agora que vimos como criar um dataframe a partir de um csv podemos ver algumas o
 que mostra alguns valores interessantes sobre nosso conjunto de dados: 
 
 ```python
-file_path = '/data/california_housing_train.csv' 
+file_path = '/data/california_housing_train.csv' # Um arquivo csv com informações sobre casas
 dataframe_with_csv = pd.read_csv(file_path)
 dataframe_with_csv.describe()
 ```
