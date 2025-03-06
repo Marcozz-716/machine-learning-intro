@@ -44,7 +44,7 @@ dataframe_with_csv.describe()
 **output:**
 ![Output](output_describe.png)
 
-As colunas no sentido horizontal (longitude, latitude, etc...) são as colunas do próprio csv, e as colunas no sentido vertical são cálculos feitos pelo próprio Pandas. Essas colunas verticais são importantes para termos uma visão geral dos nossos dados e a seguir explicarei o que cada uma representa:
+As colunas no sentido horizontal (longitude, latitude, etc...) são as colunas do próprio csv, e as colunas no sentido vertical são cálculos feitos pelo próprio Pandas. Essas colunas verticais são importantes para termos uma visão geral dos nossos dados. A seguir explicarei o que cada uma representa:
 
 **- count:** Representa o número de valores não nulos em uma coluna.
 
@@ -54,11 +54,11 @@ As colunas no sentido horizontal (longitude, latitude, etc...) são as colunas d
 
 **- min:** O valor mínimo encontrado.
 
-**- 25%:** Representa o 1° quartil, ou seja, o valor cujo 25% dos dados estão abaixo. Nesse caso podemos dizer que 25% dos dados estão abaixo de - 121,79.
+**- 25%:** Representa o 1° quartil, ou seja, o valor cujo 25% dos dados estão abaixo. Nesse caso podemos dizer que na coluna longitude 25% dos dados estão abaixo de - 121,79.
 
-**- 50%:** Representa o 2° quartil, ou seja, a mediana. Nesse caso podemos dizer que uma parte dos dados está abaixo de - 118,49 e a outra parte está acima.
+**- 50%:** Representa o 2° quartil, ou seja, a mediana. Nesse caso podemos dizer que na coluna longitude uma parte dos dados está abaixo de - 118,49 e a outra parte está acima.
 
-**- 75%:** Representa o 3° quartil, ou seja, o valor cujo 75% dos dados estão abaixo. Nesse caso podemos dizer que 75% dos dados estão abaixo de - 118.
+**- 75%:** Representa o 3° quartil, ou seja, o valor cujo 75% dos dados estão abaixo. Nesse caso podemos dizer que na coluna longitude 75% dos dados estão abaixo de - 118.
 
 **- max:** O valor máximo encontrado.
 
