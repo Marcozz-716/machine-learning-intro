@@ -2,8 +2,8 @@
 Apostila de machine learning baseada em cursos do Kaggle. Aqui teremos explicações, exemplos e códigos a respeito do assunto.
 
 ## Sumário
-- [Uma breve explicação](#uma-breve-explicacao)
-- [Introdução a análise exploratória com Pandas](#introducao-a-analise-exploratoria)
+- [Uma breve explicação](#uma-breve-explicação)
+- [Introdução à análise exploratória com Pandas](https://github.com/Marcozz-716/machine-learning-intro/tree/main/01_analise_exploratoria)
 - [Primeiros modelos (com sklearn)](#primeiros-modelos-com-sklearn)
 - [Treinando o modelo](#treinando-o-modelo)
 - [Predições do modelo](#predicoes-do-modelo)
