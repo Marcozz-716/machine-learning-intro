@@ -97,8 +97,8 @@ dataframe_with_csv.head() # usando o dataframe criado inicialmente
 ![](head.png)
 
 Por padrão o 
-`head()``
-retorna os 5 primeiro, mas nós podemos adicionar um número inteiro para retornar a quantidade que quisermos:
+`head()`
+retorna os 5 primeiros, mas nós podemos adicionar um número inteiro como argumento para retornar a quantidade que quisermos:
 
 ```python
 dataframe_with_csv.head(6) # os 6 primeiros
@@ -111,6 +111,7 @@ Já a função
 pega os últimos registros e segue a mesma lógica de uso:
 
 ```python
+dataframe_with_csv.tail() # os 5 últimos
 dataframe_with_csv.tail(6) # os 6 últimos
 dataframe_with_csv.tail(10) # os 10 últimos
 dataframe_with_csv.tail(15) # os 15 últimos

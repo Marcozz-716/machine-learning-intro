@@ -48,7 +48,8 @@ O modelo foi criado e definimos também um
 **BedroomAbvGr:** Número de quartos acima do nível do solo.
 
 **TotRmsAbvGrd:** Total de cômodos acima do nível do solo.
-<br><br>
+<br>
+<br>
 A **variável dependente**, no nosso caso, é a coluna
 `SalePrice`
 , já que é o valor que queremos prever.
@@ -58,7 +59,7 @@ import pandas as pd
 file = 'data/train.csv'
 var_independentes = ['LotArea','YearBuilt','1stFlrSF','2ndFlrSF','FullBath','BedroomAbvGr','TotRmsAbvGrd']
 df = pd.read_csv(file)
-X = df[var_independentes] # independente
+X = df[var_independentes] # independentes
 y = df.SalePrice # dependente
 ```
 ### Observações
