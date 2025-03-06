@@ -74,7 +74,9 @@ df = pd.DataFrame(data)
 # Resumo da coluna categórica
 print(df['Categoria'].describe())
 ```
+
 **output:**
+
 ```
 count     10
 unique     3
