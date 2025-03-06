@@ -31,13 +31,13 @@ Para resolver isso você pode usar alguns argumentos no método read_csv():
 dataframe_with_csv = pd.read_csv(file_path, encoding='iso-8859-1', delimiter=';')
 ```
 
-## Métodos básicos com dataframes
+## Informações estatísticas do dataframes
 Agora que vimos como criar um dataframe a partir de um csv podemos ver algumas operações básicas. Uma delas é a visualização com o método 
 `describe()`
 que mostra alguns valores interessantes sobre nosso conjunto de dados: 
 
 ```python
-file_path = '/data/california_housing_train.csv' # Um arquivo csv com informações sobre casas
+file_path = '/data/california_housing_train.csv' # Um arquivo csv com dados imobiliários
 dataframe_with_csv = pd.read_csv(file_path)
 dataframe_with_csv.describe()
 ```
@@ -81,4 +81,35 @@ unique     3
 top        A
 freq       4
 Name: Categoria, dtype: object
+```
+
+## head() e tail()
+O Pandas também permite que nós tenhamos acesso as primeiras linhas de um dataframe. Podemos usar a função
+`head()` 
+para isso:
+
+```python
+dataframe_with_csv.head() # usando o dataframe criado inicialmente
+```
+**output:**
+![](head.png)
+
+Por padrão o 
+`head()``
+retorna os 5 primeiro, mas nós podemos adicionar um número inteiro para retornar a quantidade que quisermos:
+
+```python
+dataframe_with_csv.head(6) # os 6 primeiros
+dataframe_with_csv.head(10) # os 10 primeiros
+dataframe_with_csv.head(15) # os 15 primeiros
+```
+
+Já a função 
+`tail()`
+pega os últimos registros e segue a mesma lógica de uso:
+
+```python
+dataframe_with_csv.tail(6) # os 6 últimos
+dataframe_with_csv.tail(10) # os 10 últimos
+dataframe_with_csv.tail(15) # os 15 últimos
 ```
