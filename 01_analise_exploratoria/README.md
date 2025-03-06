@@ -24,7 +24,7 @@ Alguns erros comuns são
 `ParseError: Error tokenizing data. C error: Expected 1 fields`
 , ou ainda
 `UnicodeDecode Error: 'utf-8' codec can't decode byte 0xcd...`.
-Isso pode indicar que contém caractéres incompatíveis com a codificação **utf-8**
+Isso pode indicar que os dados contém caractéres incompatíveis com a codificação **utf-8**
 
 Para resolver isso você pode usar alguns argumentos no método read_csv():
 ```python
@@ -44,14 +44,41 @@ dataframe_with_csv.describe()
 **output:**
 ![Output](output_describe.png)
 
-As colunas no sentido horizontal (longitude, latitude, etc...) são as colunas do próprio csv, e as colunas no sentido vertical são cálculos feitos pelo próprio Pandas. Essas colunas verticais são importantes para termos uma visão geral dos nossos dados e a seguir explicarei o que cada um representa:
+As colunas no sentido horizontal (longitude, latitude, etc...) são as colunas do próprio csv, e as colunas no sentido vertical são cálculos feitos pelo próprio Pandas. Essas colunas verticais são importantes para termos uma visão geral dos nossos dados e a seguir explicarei o que cada uma representa:
 
 **- count:** Representa o número de valores não nulos em uma coluna.
 
-**- mean:** A média dos valores em uma coluna. Ele soma os valores não nulos da coluna e divide pela quantidade de valores não nulos.
+**- mean:** A média de uma coluna é a soma dos valores não nulos da coluna dividida pela quantidade de valores não nulos.
 
 **-std:** É o desvio padrão que indica o quão afastados os valores estão da média. Um desvio padrão alto indica que há uma maior variação nos dados, já um desvio padrão baixo indica que os dados estão próximos da média.
 
+**- min:** O valor mínimo encontrado.
 
+**- 25%:** Representa o 1° quartil, ou seja, o valor cujo 25% dos dados estão abaixo. Nesse caso podemos dizer que 25% dos dados estão abaixo de - 121,79.
 
+**- 50%:** Representa o 2° quartil, ou seja, a mediana. Nesse caso podemos dizer que uma parte dos dados está abaixo de - 118,49 e a outra parte está acima.
 
+**- 75%:** Representa o 3° quartil, ou seja, o valor cujo 75% dos dados estão abaixo. Nesse caso podemos dizer que 75% dos dados estão abaixo de - 118.
+
+**- max:** O valor máximo encontrado.
+
+Você deve ter percebido que até agora estamos lidando com dados numéricos, mas o 
+`describe()` 
+também pode lidar com **dados categóricos** (strings e valores não numéricos). O que muda, nesse caso, é a forma como as informações são exibidas: 
+
+```python
+# Criando um novo DataFrame só com variáveis categóricas
+data = {'Categoria': ['A', 'B', 'A', 'A', 'C', 'B', 'B', 'C', 'C', 'A']}
+df = pd.DataFrame(data)
+
+# Resumo da coluna categórica
+print(df['Categoria'].describe())
+```
+**output:**
+```
+count     10
+unique     3
+top        A
+freq       4
+Name: Categoria, dtype: object
+```
