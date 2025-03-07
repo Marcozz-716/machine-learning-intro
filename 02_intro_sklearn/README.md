@@ -11,7 +11,7 @@ Para os exemplos a seguir, usaremos o modelo
 . Uma implementação de árvore de decisão para tarefas de regressão, disponível no sklearn. Em termos simples, uma árvore de decisão é como um conjunto de perguntas encadeadas (ou nós), onde cada pergunta divide os dados em diferentes grupos com base em características específicas. Esse processo continua até que os grupos formados sejam o mais homogêneos possível.
 ![](tree.png)
 
-Nas tarefas de regressão (como a nossa), as "perguntas" feitas para separar os dados são baseadas em um critério chamado variância. A cada divisão o modelo tenta reduzir a variância dentro dos grupos, ou seja, ele busca separar os dados de maneira que os valores nas diferentes ramificações da árvore sejam mais próximos entre si. Esse processo de divisão continua até que a variância seja baixa o bastante, formando grupos mais homogêneos. No futuro posso criar um repositório dedicado a árvores de decisão, explicando esses conceitos com maior profundidade. 
+Nas tarefas de regressão (como a nossa), **as "perguntas" feitas para separar os dados são baseadas em um critério chamado variância**. A cada divisão o modelo tenta reduzir a variância dentro dos grupos, ou seja, ele busca separar os dados de maneira que os valores nas diferentes ramificações da árvore sejam mais próximos entre si. Esse processo de divisão continua até que a variância seja baixa o bastante, formando grupos mais homogêneos. No futuro posso criar um repositório dedicado a árvores de decisão, explicando esses conceitos com maior profundidade. 
 
 Com sklearn nós usamos esse modelo da seguinte forma:
 
@@ -62,7 +62,8 @@ df = pd.read_csv(file)
 X = df[var_independentes] # independentes
 y = df.SalePrice # dependente
 ```
-### Observações
+
+## Dados faltantes
 Em alguns casos o conjunto de dados pode conter valores faltantes, e o Pandas oferece algumas alternativas pra contornar isso, como por exemplo apagar as linhas com valores faltantes. 
 
 ```python
