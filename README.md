@@ -6,8 +6,7 @@ Apostila de machine learning baseada em cursos do Kaggle. Aqui teremos explicaç
 - [Introdução à análise exploratória com Pandas](https://github.com/Marcozz-716/machine-learning-intro/tree/main/01_analise_exploratoria)
 - [Primeiros modelos (com sklearn)](https://github.com/Marcozz-716/machine-learning-intro/tree/main/02_intro_sklearn)
 - [Treinando o modelo](#treinando-o-modelo)
-- [Predições do modelo](#predicoes-do-modelo)
-- [Validação do modelo](#validacao-do-modelo)
+- [Predições e validação](https://github.com/Marcozz-716/machine-learning-intro/blob/main/04_predictions_and_validate)
 - [Overfitting e Underfitting](#overfitting-e-underfitting)
 - [Testando mais modelos](#testando-mais-modelos)
 
