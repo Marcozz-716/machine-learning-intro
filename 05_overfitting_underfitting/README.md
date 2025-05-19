@@ -21,3 +21,56 @@ Para identificar se nosso modelo está em underfitting ou overfitting podemos an
 Se nosso modelo é simples e está tendo um MAE alto tanto no treino quanto no teste podemos dizer que ele está em **underfitting**. Se a complexidade do modelo aumenta e ele tem bom desempenho no treino mas um desempenho ruim no teste podemos dizer que ele está em **overfitting**.
 
 ## Otimização de hiperparâmetros
+É possível tomar medidas pra melhorar o desempenho dos modelos em um processo chamado de **otimização de hiperparâmetros**. Existem vários hiperâmetros que podemos alterar, mas para o modelo que estamos trabalhando (o DecisionTreeRegressor) nós podemos usar o
+`max_leaf_node`
+que define o número máximo de nós finais que uma árvore pode ter.
+
+```python
+max_size = 100 # usaremos 100 como o número máximo de nós finais
+model_test = DecisionTreeRegressor(random_state=0, max_leaf_nodes=max_size)
+```
+
+Nesse caso o número 100 foi escolhido **só pra exemplificar**, mas nós podemos encontrar um valor ideal para esse hiperparâmetro. Para fazer isso a gente poderia criar várias árvores com diferentes valores de "max_leaf_nodes", depois vemos qual valor gera um erro médio absoluto menor. 
+
+### Importando novos dados
+
+```python
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_error
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+dataset = 'sample_data/california_housing_train.csv' # escolhendo o dataset
+dataframe = pd.read_csv(dataset)
+dataframe = dataframe.dropna(thresh=3)
+
+features = ['longitude', 'latitude', 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income']
+X = dataframe[features]
+y = dataframe.median_house_value
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+### Otimizando hiperparâmetro
+
+```python
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_error
+
+max_values = [100, 200, 300, 400]
+best_values = [] 
+
+for max_value in max_values:
+    model = DecisionTreeRegressor(random_state=0, max_leaf_nodes=max_value) # mexendo no hiperparâmetro max_leaf_nodes
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    if len(best_values) == 0 or best_values[0] > mean_absolute_error(y_test, y_pred):
+        best_values = [mean_absolute_error(y_test, y_pred), max_value]
+
+print("Best Values:", best_values) 
+```
+
+### output
+
+```
+Best Values: [41107.58600590038, 300]
+```
