@@ -30,7 +30,7 @@ max_size = 100 # usaremos 100 como o número máximo de nós finais
 model_test = DecisionTreeRegressor(random_state=0, max_leaf_nodes=max_size)
 ```
 
-Nesse caso o número 100 foi escolhido **só pra exemplificar**, mas nós podemos encontrar um valor ideal para esse hiperparâmetro. Para fazer isso a gente poderia criar várias árvores com diferentes valores de "max_leaf_nodes", depois vemos qual valor gera um erro médio absoluto menor. 
+Nesse caso o número 100 foi escolhido **só pra exemplificar**, mas nós podemos encontrar um valor ideal para esse hiperparâmetro. Para fazer isso a gente poderia criar várias árvores com diferentes valores de "max_leaf_nodes", depois veremos qual valor gera um erro médio absoluto menor. 
 
 ### Importando novos dados
 
@@ -60,17 +60,19 @@ max_values = [100, 200, 300, 400]
 best_values = [] 
 
 for max_value in max_values:
-    model = DecisionTreeRegressor(random_state=0, max_leaf_nodes=max_value) # mexendo no hiperparâmetro max_leaf_nodes
+    model = DecisionTreeRegressor(random_state=0, max_leaf_nodes=max_value)
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     if len(best_values) == 0 or best_values[0] > mean_absolute_error(y_test, y_pred):
         best_values = [mean_absolute_error(y_test, y_pred), max_value]
 
-print("Best Values:", best_values) 
+print("Best MAE:", best_values[0])
+print("Best max_leaf_nodes:", best_values[1])
 ```
 
 ### output
 
 ```
-Best Values: [41107.58600590038, 300]
+Best MAE: 41107.58600590038
+Best max_leaf_nodes: 300
 ```
