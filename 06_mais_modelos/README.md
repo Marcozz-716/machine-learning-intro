@@ -6,7 +6,7 @@ Até aqui nós usamos o
 `RandomForestRegressor`
 . Esse modelo também se baseia em árvores de decisão, porém ele se destaca porque usa um conjunto dessas árvores para prever os valores. No caso de um problema de regressão (como o de prever o preço de imóveis) o **Random Forest** nos retorna a média das previsões das árvores, já em um problema de classificação (como por exemplo uma situação onde é preciso determinar se um e-mail é spam ou não) o **Random Forest** nos retorna a classe mais votada entre as árvores.
 
-!()[random-forest-algorithm-random-forest.webp]
+![](random-forest-algorithm-random-forest.webp)
 
 Para que o Random Forest faça boas previsões é necessário que o modelo consiga absorver os diferentes aspectos do dataset, caso contrário, se as previsões de todas as árvores forem iguais a ideia de usar um conjunto delas deixaria de ser um diferencial. Por isso o **sklearn** deve garantir que cada árvore consiga captar um aspecto diferente do dataset, e algumas das principais técnicas são:
 
