@@ -27,3 +27,13 @@ predict = rf_model.predict(val_x)
 ```
 
 ## Hiperparâmetros
+
+O Random Forest também tem hiperparâmetros que podemos mexer pra aumentar o desempenho de um modelo. Alguns deles são:
+
+* `max_depth` Se refere a profundidade máxima para as árvores.
+
+* `n_estimators` Número de árvores na floresta.
+
+* `min_samples_split` Número de árvores na floresta.
+
+* `min_samples_leaf` Número mínimo de amostras que devem estar presentes em um nó folha.
